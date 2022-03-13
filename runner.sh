@@ -15,7 +15,8 @@ num_of_copies="${1:-2}"
 ## By default 1800, can be passed as second parameter
 restart_interval="${2:-1800}"
 
-
+#Just in case kill previous copy of mhddos_proxy
+pkill -f start.py
 
 #sudo apt update
 
