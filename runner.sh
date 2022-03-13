@@ -77,7 +77,7 @@ do
            
             #echo $cmd_line
             
-            python3 ~/mhddos_proxy/$cmd_line" --period 3600"&
+            python3 ~/mhddos_proxy/$cmd_line" -p 3600"&
    done
 echo -e "#####################################\n"
 sleep $restart_interval
