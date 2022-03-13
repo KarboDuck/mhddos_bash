@@ -61,7 +61,7 @@ do
    echo -e "random numbers: " $random_numbers "\n"
    
    # Print all randomly selected targets on screen
-   echo -e "Choosen targets:\n"
+   echo -e "Choosen target(s):\n"
    for i in $random_numbers
    do
              target=$(awk 'NR=='"$i" <<< "$(curl -s https://raw.githubusercontent.com/KarboDuck/runner.sh/master/runner_targets | cat | grep "^runner.py")")
