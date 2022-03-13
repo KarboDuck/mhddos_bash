@@ -2,7 +2,7 @@
 ##### Use next command in local linux terminal to run this script.
 #  >>>>>   curl -s https://raw.githubusercontent.com/KarboDuck/runner.sh/master/runner.sh | bash  <<<<<
 ##### It is possible to pass arguments "num_of_copies" and "restart_interval" to script.
-##### curl -s https://raw.githubusercontent.com/KarboDuck/runner.sh/master/runner.sh | bash -s -- 1 1800 (launch with num_of_copies=1 and restart_interval=1800)
+##### curl -s https://raw.githubusercontent.com/KarboDuck/runner.sh/master/runner.sh | bash -s -- 2 1800 (launch with num_of_copies=2 and restart_interval=1800)
 
 ##### To kill script just close terminal window. OR. In other terminal run 'pkill -f start.py' several times. And press CTRL+C in main window several times.
 
