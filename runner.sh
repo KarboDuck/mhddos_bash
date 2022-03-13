@@ -20,6 +20,7 @@ restart_interval="${2:-900}"
 
 #Just in case kill previous copy of mhddos_proxy
 pkill -f start.py
+pkill -9 -f python3
 
 #sudo apt update
 
@@ -81,5 +82,6 @@ do
 echo "#####################################"
 sleep $restart_interval
 echo -e "RESTARTING\n"
-pkill -f start.py
+pkill -9 -f start.py #in theory should work but doesn't give good results
+pkill -9 -f python3 #work flawlessly
 done
