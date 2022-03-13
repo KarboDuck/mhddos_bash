@@ -76,6 +76,6 @@ do
    done
 echo "#####################################"
 sleep $restart_interval
-echo -e "n RESTARTING\n"
-pkill -f runner.py
+echo -e "RESTARTING\n"
+pkill -f start.py
 done
