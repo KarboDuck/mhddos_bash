@@ -84,4 +84,5 @@ sleep $restart_interval
 echo -e "RESTARTING\n"
 pkill -9 -f start.py #in theory should work but doesn't give good results
 pkill -9 -f python3 #work flawlessly
+sleep 2
 done
