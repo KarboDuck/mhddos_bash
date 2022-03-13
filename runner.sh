@@ -3,15 +3,19 @@
 #  >>>>>   curl -s https://raw.githubusercontent.com/KarboDuck/runner.sh/master/runner.sh | bash   <<<<<
 ##### To kill script press CTRL+C several times.
 
-## Restart script every N seconds (600s = 10m, 1800s = 30m, 3600s = 60m).
-## It allows to download updates for mhddos_proxy, MHDDoS and target list.
-restart_interval=1800
-
 ## "num_of_copies" allows to start several copies of runner.py.
 ## Each copy will choose different target from https://raw.githubusercontent.com/KarboDuck/runner.sh/master/runner_targets
 ## This is different from "multiple targets" in runner.py. Built in runner.py "multiple targets" can attack multiple IP's but only with same one method.
 ## "num_of_copies" allows to launch several copies of runner.py and targets will be attacked with different methods, if specified.
-num_of_copies=2
+## By default 2 copies launched, can be passed as first parameter
+num_of_copies="${1:-2}"
+
+## Restart script every N seconds (600s = 10m, 1800s = 30m, 3600s = 60m).
+## It allows to download updates for mhddos_proxy, MHDDoS and target list.
+## By default 1800, can be passed as second parameter
+restart_interval="${1:-1800}"
+
+
 
 #sudo apt update
 
