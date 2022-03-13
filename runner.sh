@@ -10,8 +10,8 @@
 ## Each copy will choose different target from https://raw.githubusercontent.com/KarboDuck/runner.sh/master/runner_targets
 ## This is different from "multiple targets" in mhddos_proxy. Built in mhddos_proxy "multiple targets" can attack multiple IP's but only with same one method.
 ## "num_of_copies" allows to launch several copies of runner.py and targets will be attacked with different methods, if specified.
-## By default 2 copies launched, can be passed as first parameter. Don't use high values, pc/vps can slowdown.
-num_of_copies="${1:-2}"
+## By default only 1 copy is launched. Value can be passed as first argument. Don't use high values, pc/vps can slowdown or even freeze.
+num_of_copies="${1:-1}"
 
 ## Restart script every N seconds (900s = 15m, 1800s = 30m, 3600s = 60m).
 ## It allows to download updates for mhddos_proxy, MHDDoS and target list.
