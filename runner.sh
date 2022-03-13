@@ -59,7 +59,7 @@ do
 
    # Create list with random numbers. To choose random targets from list on next step.
    random_numbers=$(shuf -i 1-$list_size -n $num_of_copies)
-   echo -e "random numbers: " $random_number(s) "\n"
+   echo -e "random number(s): " $random_numbers "\n"
    
    # Print all randomly selected targets on screen
    echo -e "Choosen target(s):\n"
