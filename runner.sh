@@ -13,7 +13,7 @@ num_of_copies="${1:-2}"
 ## Restart script every N seconds (600s = 10m, 1800s = 30m, 3600s = 60m).
 ## It allows to download updates for mhddos_proxy, MHDDoS and target list.
 ## By default 1800, can be passed as second parameter
-restart_interval="${1:-1800}"
+restart_interval="${2:-1800}"
 
 
 
