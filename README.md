@@ -20,7 +20,8 @@
 
 ## Список цілей
 
-<img width="1484" alt="Screenshot 2022-03-13 at 18 09 49" src="https://user-images.githubusercontent.com/53382906/158068598-cd0627b6-aee6-4255-a17f-715ca1a86b2d.png">
+![Screenshot 2022-03-13 at 23 43 03](https://user-images.githubusercontent.com/53382906/158080424-cb6f1c58-4be8-4146-97e2-2a814ce3a1eb.png)
+
 
 runner.sh підтримує единий [список цілей](https://github.com/KarboDuck/karbo-wiki/blob/master/runner_targets), який можна тримати на github. Список можна редагувати "на льоту" і при наступному оновленні (по замовчуванню кожні 15 хв) всі користувачі runner.sh будуть працювати з новим списком.
 
