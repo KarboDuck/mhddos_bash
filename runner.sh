@@ -1,6 +1,6 @@
 #!/bin/bash
 ##### Use next command in local linux terminal to run this script.
-#  >>>>>   curl -s https://raw.githubusercontent.com/KarboDuck/runner.sh/master/runner.sh | bash -s  <<<<<
+#  >>>>>   curl -s https://raw.githubusercontent.com/KarboDuck/runner.sh/master/runner.sh | bash  <<<<<
 ##### To kill script press CTRL+C several times.
 
 ## "num_of_copies" allows to start several copies of runner.py.
