@@ -71,7 +71,7 @@ do
    for i in $random_numbers
    do
             # Filter and only get lines that starts with "runner.py". Then get one target from that filtered list.
-            cmd_line=$(awk 'NR=='"$i" <<< "$(curl -s https://raw.githubusercontent.com/KarboDuck/runner.sh/master/runner_targets | cat | grep "-p")")
+            cmd_line=$(awk 'NR=='"$i" <<< "$(curl -s https://raw.githubusercontent.com/KarboDuck/runner.sh/master/runner_targets | cat | grep "^-p")")
            
             #echo $cmd_line
             python3 ~/mhddos_proxy/runner.py""$cmd_line&
