@@ -51,7 +51,7 @@ while true
 echo -e "#####################################\n"
 do
    # Get number of targets in runner_targets. First 5 strings ommited, those are reserved as comments.
-   list_size=$(curl -s https://raw.githubusercontent.com/KarboDuck/runner.sh/master/runner_targets | cat | grep "-p" | wc -l)
+   list_size=$(curl -s https://raw.githubusercontent.com/KarboDuck/runner.sh/master/runner_targets | cat | grep "^-p" | wc -l)
    
    echo -e "\nNumber of targets in list: " $list_size "\n"
 
