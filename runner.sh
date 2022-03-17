@@ -76,8 +76,9 @@ do
             echo "command line"
             echo $cmd_line
             echo "full cmd"
-
-            python3 ~/mhddos_proxy/$cmd_line
+            
+            param="-p 333"
+            python3 ~/mhddos_proxy/$cmd_line $param
    done
 echo -e "#####################################\n"
 sleep $restart_interval
