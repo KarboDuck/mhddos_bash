@@ -13,13 +13,19 @@
 ## Default = 2 copies(instances). Don't use high values without testing first, pc/vps can slowdown.
 num_of_copies="${1:-2}"
 
-
 ## Restart script every N seconds (900s = 15m, 1800s = 30m, 3600s = 60m).
 ## It allows to download updates for mhddos_proxy, MHDDoS and target list.
 ## By default 900s (15m), can be passed as second parameter
 restart_interval="${2:-900}"
+
+
+#parameters that passed to python scrypt
 threads="${3:-500}"
+threads="-t $threads"
 rpc="${4:-50}"
+rpc="--rpc $rpc"
+proxy_interval=3600
+proxy_interval="-p $proxy_interval"
 
 #Just in case kill previous copy of mhddos_proxy
 pkill -f start.py
@@ -77,8 +83,8 @@ do
             echo $cmd_line
             echo "full cmd"
             
-            param="-p 333"
-            python3 ~/mhddos_proxy/$cmd_line $param
+            echo $proxy_interval $threads $rpc
+            python3 ~/mhddos_proxy/$cmd_line $proxy_interval $threads $rpc
    done
 echo -e "#####################################\n"
 sleep $restart_interval
