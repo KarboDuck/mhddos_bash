@@ -7,9 +7,9 @@ cd ~
 sudo rm -r mhddos_proxy
 git clone https://github.com/porthole-ascend-cinnamon/mhddos_proxy.git
 cd mhddos_proxy
-sudo wget -N https://raw.githubusercontent.com/Aruiem234/mhddosproxy/main/proxies_config.json
-sudo git clone https://github.com/MHProDev/MHDDoS.git
-sudo python3 -m pip install -r MHDDoS/requirements.txt
+wget -N https://raw.githubusercontent.com/Aruiem234/mhddosproxy/main/proxies_config.json
+git clone https://github.com/MHProDev/MHDDoS.git
+python3 -m pip install -r MHDDoS/requirements.txt
 
 threads="${1:-1000}"; threads="-t $threads"
 rpc="--rpc 1000"
