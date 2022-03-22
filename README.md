@@ -2,7 +2,7 @@
 
 ### mhddos_bash - скрипт на bash, що керує [mhddos_proxy](https://github.com/porthole-ascend-cinnamon/mhddos_proxy)
 
-* Запускається однією командою в Linux і WSL (Windows Subsystem for Linux). Подальше втручання від користувача не обов'язкове. 
+* Запускається однією командою в Linux і WSL2 (Windows Subsystem for Linux). Подальше втручання від користувача не обов'язкове. 
  
 ```
 curl -s https://raw.githubusercontent.com/KarboDuck/mhddos_bash/master/runner.sh | bash
