@@ -1,7 +1,7 @@
 #!/bin/bash
 # Install git, python3, pip, mhddos_proxy, MHDDoS and updated proxy list.
-sudo apt update -y
-sudo apt install git python3 python3-pip -y
+sudo apt update -qq -y
+sudo apt install git python3 python3-pip -qq -y
 sudo pip install --upgrade pip
 cd ~
 sudo rm -r mhddos_proxy
@@ -26,5 +26,5 @@ do
             echo -e $i": " $cmd_line $threads "--rpc 100" "-p 3600" "--debug\n"
             #python3 ~/mhddos_proxy/runner.py $cmd_line $threads "--rpc 100" "-p 3600" "--debug"&
       done
-sleep 5
+sleep 20m
 done
