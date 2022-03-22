@@ -1,4 +1,29 @@
 #!/bin/bash
+
+sudo apt update -y
+# Install git, python3 etc.
+sudo apt install git python3 python3-pip-y
+sudo pip install --upgrade pip
+
+#Install latest version of mhddos_proxy and MHDDoS
+cd ~
+sudo rm -r mhddos_proxy
+git clone https://github.com/porthole-ascend-cinnamon/mhddos_proxy.git
+cd mhddos_proxy
+sudo rm proxies_config.json
+sudo wget https://raw.githubusercontent.com/Aruiem234/mhddosproxy/main/proxies_config.json
+sudo git clone https://github.com/MHProDev/MHDDoS.git
+sudo python3 -m pip install -r MHDDoS/requirements.txt
+cd ~
+
+#Just in case kill previous copy of mhddos_proxy
+pkill -f start.py
+pkill python3
+
+
+
+
+
 ##### Use next command in local linux terminal to run this script.
 #  >>>>>   curl -s https://raw.githubusercontent.com/KarboDuck/runner.sh/master/runner.sh | bash  <<<<<
 ##### It is possible to pass arguments "num_of_copies" and "restart_interval" to script.
@@ -29,7 +54,7 @@ proxy_interval="-p $proxy_interval"
 
 #Just in case kill previous copy of mhddos_proxy
 pkill -f start.py
-pkill python3
+pkill -f runner.py
 
 # Install git, python3, pip if doesn't installed already
 if [ ! -f /usr/bin/git ]; then
