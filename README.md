@@ -8,7 +8,7 @@
 curl -s https://raw.githubusercontent.com/KarboDuck/runner.sh/master/runner.sh | bash
 ```
 * Автоматично встановлює git, python3, pip, mhddos_proxy, MHDDoS і всі залежності.
-* 
+
 * Праюцює із базою сайтів [Українського женця](https://github.com/Aruiem234/auto_mhddos/blob/main/runner_targets).
 
 * База цілей оновлюється кожні 15 хвилин.
