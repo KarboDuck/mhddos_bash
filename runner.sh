@@ -12,7 +12,7 @@ sudo git clone https://github.com/MHProDev/MHDDoS.git
 sudo python3 -m pip install -r MHDDoS/requirements.txt
 
 threads="${1:-1000}"; threads="-t $threads"
-rpc="--rpc 100"
+rpc="--rpc 1000"
 proxy_upd="-p 3600"
 debug="--debug"
 
