@@ -25,7 +25,7 @@ restart_interval="${3:-900}"
 proxy_interval=3600
 proxy_interval="-p $proxy_interval"
 
-$debug="--debug"
+debug="--debug"
 
 # Restart attacks and update targets list every 15 minutes (by default)
 while true
