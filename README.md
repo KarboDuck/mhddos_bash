@@ -1,6 +1,6 @@
 ## Опис
 
-### runner.sh - скрипт на bash, що керує [mhddos_proxy](https://github.com/porthole-ascend-cinnamon/mhddos_proxy)
+### mhddos_bash - скрипт на bash, що керує [mhddos_proxy](https://github.com/porthole-ascend-cinnamon/mhddos_proxy)
 
 * Запускається однією командою в Linux і WSL (Windows Subsystem for Linux). Подальше втручання від користувача не обов'язкове. 
  
