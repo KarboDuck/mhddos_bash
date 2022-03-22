@@ -10,15 +10,14 @@ cd ~
 sudo rm -r mhddos_proxy
 git clone https://github.com/porthole-ascend-cinnamon/mhddos_proxy.git
 cd mhddos_proxy
-sudo rm proxies_config.json
-sudo wget https://raw.githubusercontent.com/Aruiem234/mhddosproxy/main/proxies_config.json
+sudo wget -N https://raw.githubusercontent.com/Aruiem234/mhddosproxy/main/proxies_config.json
 sudo git clone https://github.com/MHProDev/MHDDoS.git
 sudo python3 -m pip install -r MHDDoS/requirements.txt
 cd ~
 
 #Just in case kill previous copy of mhddos_proxy
 pkill -f start.py
-pkill python3
+pkill -f runner.py
 
 
 
