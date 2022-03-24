@@ -2,13 +2,24 @@
 # Install git, python3, pip, mhddos_proxy, MHDDoS and updated proxy list.
 sudo apt update -qq -y
 sudo apt install git python3 python3-pip -qq -y
+# for some virtual cloud systems based on debian (like GC)
+sudo apt install gcc libc-dev libffi-dev libssl-dev python3-dev rustc -qq -y 
 sudo pip install --upgrade pip
+
 cd ~
 sudo rm -r mhddos_proxy
 git clone https://github.com/porthole-ascend-cinnamon/mhddos_proxy.git
 cd mhddos_proxy
-wget -N https://raw.githubusercontent.com/Aruiem234/mhddosproxy/main/proxies_config.json
+# for avoid installing wget, otherwise it need to be added in install section
+rm proxies_config.json
+curl -o proxies_config.json https://raw.githubusercontent.com/Aruiem234/mhddosproxy/main/proxies_config.json 
+#wget -N https://raw.githubusercontent.com/Aruiem234/mhddosproxy/main/proxies_config.json
+
 git clone https://github.com/MHProDev/MHDDoS.git
+#change commit SHA and uncomment next 3 lines for revert to certain commit, when something code wrong happened
+#cd MHDDoS
+#git reset --hard d680dca8066c0fcea5ce59ece1ddf587a9eed79b
+#cd ..
 python3 -m pip install -r MHDDoS/requirements.txt
 
 threads="${1:-1000}"; threads="-t $threads"
