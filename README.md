@@ -18,3 +18,19 @@ curl -s https://raw.githubusercontent.com/KarboDuck/mhddos_bash/master/runner.sh
 Рекомендовано використовувати на Ubuntu 20.04. На інших системах не перевірялось. Можливо буде працювати на всіх Ubuntu починаючи з 18.04, усіх похідних Ubuntu, Debian, та WSL2.
 
 Для зупинки скрипта кілька разів натисніть CTRL+C, або закрийте вікно з терміналом.
+
+## Зміна інтенсивності
+
+Якщо скрипт дуже уповільнює ПК, або навпаки ви маєте невикористані ресурси, можна понизити, або навпаки підвищіти інтенсивність роботи скрипта. Для цього треба керувати параметром `threads`. По замовчуванню `threads = 1000`.
+
+Щоб знизити навантаження на систему, спробуйте використати `threads = 500`
+
+```
+curl -s https://raw.githubusercontent.com/KarboDuck/mhddos_bash/master/runner.sh | bash -s -- 500
+```
+
+Щоб навантажити систему більше, спробуйте використати `threads = 2000`
+
+```
+curl -s https://raw.githubusercontent.com/KarboDuck/mhddos_bash/master/runner.sh | bash -s -- 2000
+```
