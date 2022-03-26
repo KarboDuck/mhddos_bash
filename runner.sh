@@ -12,7 +12,8 @@ git clone https://github.com/porthole-ascend-cinnamon/mhddos_proxy.git
 cd mhddos_proxy
 # for avoid installing wget, otherwise it need to be added in install section
 rm proxies_config.json
-curl -o proxies_config.json https://raw.githubusercontent.com/KarboDuck/mhddos_bash/main/proxies_config.json 
+#curl -o proxies_config.json https://raw.githubusercontent.com/KarboDuck/mhddos_bash/main/proxies_config.json 
+curl -o proxies_config.json https://raw.githubusercontent.com/opengs/uashieldtargets/v2/proxy.json
 #wget -N https://raw.githubusercontent.com/Aruiem234/mhddosproxy/main/proxies_config.json
 
 git clone https://github.com/MHProDev/MHDDoS.git
