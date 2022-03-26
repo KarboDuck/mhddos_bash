@@ -47,5 +47,5 @@ do
             echo -e $i": " $cmd_line $threads "--rpc 100" "-p 3600" "--debug\n"
             python3 ~/mhddos_proxy/runner.py $cmd_line $threads $rpc $proxy_upd $debug&
       done
-sleep 10s
+sleep 20m
 done
