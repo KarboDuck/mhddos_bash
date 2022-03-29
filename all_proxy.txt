@@ -28717,7 +28717,8 @@
 8.210.48.101:18301
 8.210.48.101:18303
 8.210.48.101:18305
-8.210.48.101:183088.210.48.101:17806
+8.210.48.101:18308
+8.210.48.101:17806
 8.210.48.101:18313
 8.210.48.101:18318
 8.210.48.101:18323
@@ -31003,8 +31004,8 @@
 99.56.147.242:56250
 99.56.147.242:56250
 99.71.86.199:8118
-<html><body>You are being <a href="https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/http.txt">redirected</a>.</body></html><html><body>You are being <a href="https://raw.githubusercontent.com/porthole-ascend-cinnamon/proxy_scraper/main/proxies.txt">redirected</a>.</body></html><html><body>You are being <a href="https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/socks4.txt">redirected</a>.</body></html><html><body>You are being <a href="https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/socks5.txt">redirected</a>.</body></html>104.226.0.82:80
-<html><body>You are being <a href="https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/http.txt">redirected</a>.</body></html><html><body>You are being <a href="https://raw.githubusercontent.com/porthole-ascend-cinnamon/proxy_scraper/main/proxies.txt">redirected</a>.</body></html><html><body>You are being <a href="https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/socks4.txt">redirected</a>.</body></html><html><body>You are being <a href="https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/socks5.txt">redirected</a>.</body></html>110.235.250.155:8080
+104.226.0.82:80
+110.235.250.155:8080
 http://1.0.170.50:8080
 http://1.0.205.87:8080
 http://1.1.189.58:8080
