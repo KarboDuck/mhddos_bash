@@ -1,6 +1,6 @@
 #!/bin/bash
 cd ~
-sudo rm -r mhddos_proxy
+rm -r mhddos_proxy
 git clone https://github.com/porthole-ascend-cinnamon/mhddos_proxy.git
 python3 -m pip install -r ~/mhddos_proxy/requirements.txt
 cd mhddos_proxy
