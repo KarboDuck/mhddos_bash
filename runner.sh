@@ -1,11 +1,4 @@
 #!/bin/bash
-# Install git, python3, pip, mhddos_proxy, MHDDoS and updated proxy list.
-apt update -qq -y
-apt install git python3 python3-pip -qq -y
-# for some virtual cloud systems based on debian (like GC)
-apt install gcc libc-dev libffi-dev libssl-dev python3-dev rustc -qq -y 
-pip install --upgrade pip
-
 cd ~
 sudo rm -r mhddos_proxy
 git clone https://github.com/porthole-ascend-cinnamon/mhddos_proxy.git
